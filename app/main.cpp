@@ -12,5 +12,6 @@
 #include "pid.h"
 
 int main() {
-    return 0;
+  PID dummyPID(5.0, 5.0, 5.0);
+  return 0;
 }
