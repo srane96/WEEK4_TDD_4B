@@ -9,3 +9,7 @@ build/
 
 # Python
 *.pyc
+
+# Eclipse files
+.cproject
+.project

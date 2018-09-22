@@ -1,5 +1,5 @@
 /// Copyright 2018 <Copyright Owner- Siddhesh Rane>
-#include "../include/Controller.h"
+#include "controller.h"
 /**
  * Initialize all values to 0.0
  * if default constructor is called.

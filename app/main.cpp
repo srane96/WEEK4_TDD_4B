@@ -1,9 +1,9 @@
 /**
  * Copyright 2018 <Copyright Owner- Siddhesh Rane>
- *
+ * 
  */
 #include <iostream>
-#include "../include/Controller.h"
+#include "controller.cpp"
 
 int main() {
     return 0;
