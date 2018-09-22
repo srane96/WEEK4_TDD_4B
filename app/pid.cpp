@@ -1,17 +1,29 @@
-/// Copyright 2018 <Copyright Owner- Siddhesh Rane>
-#include "controller.h"
+/**
+ *  Copyright 2018 <Copyright Owner- Siddhesh Rane>
+ *  @file    pid.cpp
+ *  @author  Siddhesh Rane (srane96)
+ *  @date    9/22/2018
+ *
+ *  @brief PID controller class implementation
+ *
+ *  @section DESCRIPTION
+ *
+ *  This source file implements a PID controller class.
+ *  The class contains methods to compute target velocity
+ *  given setpoint, current velocity and gain parameters.
+ *
+ */
+#include "include/controller.h"
 /**
  * Initialize all values to 0.0
  * if default constructor is called.
  */
 PID::PID() {
-
 }
 /**
  * Initialize controller gains
  */
 PID::PID(const double &kp, const double& ki, const double& kd) {
-
 }
 /// Default destructor
 PID::~PID() {

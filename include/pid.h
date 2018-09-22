@@ -1,15 +1,14 @@
 /**
- * Copyright 2018 <Copyright Owner- Siddhesh Rane>
- * @class PID
+ *  Copyright 2018 <Copyright Owner- Siddhesh Rane>
+ *  @file    pid.hpp
+ *  @author  Siddhesh Rane (srane96)
+ *  @date    9/22/2018
  *
- * @brief PID controller for mobile robot
+ *  @brief PID controller for mobile robot
  *
- * This class defines basic PID controller that
- * can calculate target velocity given the setpoint
- * and current velocity
+ *  @section DESCRIPTION
  *
- * @author Siddhesh Rane
- *
+ *  Source header file for PID controller class.
  *
  */
 #ifndef WEEK4_TDD_4B_INCLUDE_CONTROLLER_H_
