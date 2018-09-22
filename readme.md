@@ -1,6 +1,6 @@
 # C++ Boilerplate
-[![Build Status](https://travis-ci.org/dpiet/cpp-boilerplate.svg?branch=master)](https://travis-ci.org/dpiet/cpp-boilerplate)
-[![Coverage Status](https://coveralls.io/repos/github/dpiet/cpp-boilerplate/badge.svg?branch=master)](https://coveralls.io/github/dpiet/cpp-boilerplate?branch=master)
+[![Build Status](https://travis-ci.org/srane96/Week4_TDD_4B.svg?branch=master)](https://travis-ci.org/srane96/Week4_TDD_4B)
+[![Coverage Status](https://coveralls.io/repos/github/srane96/Week4_TDD_4B/badge.svg?branch=master)](https://coveralls.io/github/srane96/Week4_TDD_4B?branch=master)
 ---
 
 ## Overview
