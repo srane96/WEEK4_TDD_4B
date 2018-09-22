@@ -1,8 +1,7 @@
 #include <iostream>
-#include <lib.hpp>
+#include "../include/Controller.h"
 
 int main()
 {
-    dummy();
     return 0;
 }
