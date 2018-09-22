@@ -12,8 +12,8 @@
  *
  *
  */
-#ifndef INCLUDE_CONTROLLER_H_
-#define INCLUDE_CONTROLLER_H_
+#ifndef WEEK4_TDD_4B_INCLUDE_CONTROLLER_H_
+#define WEEK4_TDD_4B_INCLUDE_CONTROLLER_H_
 #include <iostream>
 class PID {
  private:
@@ -32,7 +32,7 @@ class PID {
    * @param ki - integral gain
    * @param kd - differential gain
    */
-  PID(double kp, double ki, double kd);
+  PID(const double &kp, const double& ki, const double& kd);
   /// PID destructor
   ~PID();
   /**
@@ -42,28 +42,28 @@ class PID {
    * @param currentVel - current velocity
    * @return new velocity
    */
-  double compute(double setPoint, double currentVel);
+  double compute(const double& setPoint, const double& currentVel);
   /**
    * @brief set gain values for PID class
    * @param kp - proportional gain
    * @param ki - integral gain
    * @param kd - differential gain
    */
-  void setParameters(int kp, int ki, int kd);
+  void setParameters(const double &kp, const double& ki, const double& kd);
   /**
    * @brief get value of ki
    * @return Ki value of PID
    */
-  int getKi();
+  double getKi();
   /**
    * @brief get value of kp
    * @return kp value of PID
    */
-  int getKp();
+  double getKp();
   /**
    * @brief get value of kd
    * @return kd value of PID
    */
-  int getKd();
+  double getKd();
 };
-#endif  // INCLUDE_CONTROLLER_H_
+#endif  // WEEK4_TDD_4B_INCLUDE_CONTROLLER_H_
