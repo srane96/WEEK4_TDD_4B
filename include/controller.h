@@ -20,7 +20,9 @@ class PID {
   double kp;  ///< proportional gain
   double ki;  ///< integral gain
   double kd;  ///< differential gain
-
+  double prevError;  ///< error at previous time step
+  double dt;  ///< time step
+  double integralError;  ///< Accumulation of error over time
  public:
   /**
    * @brief Default PID Controller
