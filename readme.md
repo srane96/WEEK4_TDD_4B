@@ -3,6 +3,15 @@
 [![Coverage Status](https://coveralls.io/repos/github/srane96/Week4_TDD_4B/badge.svg?branch=master)](https://coveralls.io/github/srane96/Week4_TDD_4B?branch=master)
 ---
 
+## Authors
+```
+Part 1:
+Driver: Siddhesh Rane (srane96)
+Navigator: Srinidhi Sreenath (SrinidhiSreenath)
+@version 1.0
+@Copyright 2018 <Copyright Owner- Siddhesh Rane>
+
+```
 ## Overview
 
 Simple starter C++ project with:
