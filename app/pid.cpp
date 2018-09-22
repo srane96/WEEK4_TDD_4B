@@ -13,7 +13,7 @@
  *  given setpoint, current velocity and gain parameters.
  *
  */
-#include "include/controller.h"
+#include "pid.h"
 /**
  * Initialize all values to 0.0
  * if default constructor is called.
@@ -39,7 +39,6 @@ double PID::compute(const double& setPoint, const double& currentVel) {
  * Set new values to member variables of the class
  */
 void PID::setParameters(const double &kp, const double& ki, const double& kd) {
-  return 0;
 }
 /// Return value of Ki member variable
 double PID::getKi() {
