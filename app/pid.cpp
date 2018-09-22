@@ -1,5 +1,5 @@
 /**
- *  Copyright 2018 <Copyright Owner- Siddhesh Rane>
+ *  Copyright 2018 Siddhesh Rane
  *  @file    pid.cpp
  *  @author  Siddhesh Rane (srane96)
  *  @date    9/22/2018
