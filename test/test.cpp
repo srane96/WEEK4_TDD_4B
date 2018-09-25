@@ -9,8 +9,8 @@ TEST(PIDTest, classInitialization) {
   dummyPID.setParameters(15.0, 50.5, 2.0);
 
   EXPECT_EQ(15.0, dummyPID.getKp());
-  EXPECT_EQ(50.0, dummyPID.getKi());
-  EXPECT_EQ(25.0, dummyPID.getKd());
+  EXPECT_EQ(50.5, dummyPID.getKi());
+  EXPECT_EQ(2.0, dummyPID.getKd());
 }
 /**
  * Test compute method
