@@ -21,10 +21,27 @@ Navigator: Mayank Pathak (mayankpathak10)
 @Copyright 2018 Venkatraman Narayanan
 
 ```
+## Overview
+A simple illustration of pair programming concepts and implementation of PID controller usinf:
+* cmake
+* googletest
+* Travis CI
+* Coveralls
+
+## Design review discussions and changes
+The following suggestions/changes were made based on a design review meeting:
+
+1. The initial setup considered the time step parameter to be ```const double```, thus sealing the ability to change its value. It was changed to ```double``` for versatile execution of the controller.
+
+2. The original design did not accomodate member-functions that alter/retrieve class parameters/state variables such as, Kp, Kd, Ki and Outputs. New member-functions were added to set and retrieve class parameters
+
+3. The initial test cases were wrong. The incorrect test cases were changed and new test cases were added to increase coverage to 100%
+
+4. Few deviations in commenting styles were corrected to follow Google Style Guide convention
 
 ## Standard install via command-line
 ```
-git clone --recursive https://github.com/srane96/Week4_TDD_4B
+git clone --recursive https://github.com/vijay4313/Week4_TDD_4B
 cd <path to repository>
 mkdir build
 cd build
@@ -42,7 +59,7 @@ In your Eclipse workspace directory (or create a new one), checkout the repo (an
 ```
 mkdir -p ~/workspace
 cd ~/workspace
-git clone --recursive https://github.com/srane96/Week4_TDD_4B
+git clone --recursive https://github.com/vijay4313/Week4_TDD_4B
 ```
 
 In your work directory, use cmake to create an Eclipse project for an [out-of-source build] of cpp-boilerplate
