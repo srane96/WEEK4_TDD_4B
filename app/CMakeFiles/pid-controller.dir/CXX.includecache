@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/venkatraman/Desktop/ENPM808/HW/Week4/Week4_TDD_4B/app/main.cpp
+iostream
+-
+pid.h
+/home/venkatraman/Desktop/ENPM808/HW/Week4/Week4_TDD_4B/app/pid.h
+
+/home/venkatraman/Desktop/ENPM808/HW/Week4/Week4_TDD_4B/app/pid.cpp
+pid.h
+/home/venkatraman/Desktop/ENPM808/HW/Week4/Week4_TDD_4B/app/pid.h
+
+include/pid.h
+iostream
+-
+

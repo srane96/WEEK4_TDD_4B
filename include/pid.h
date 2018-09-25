@@ -16,12 +16,13 @@
 #include <iostream>
 class PID {
  private:
-  const double dt = 0.01;  ///< time step with constant value
-  double kp;  ///< proportional gain
-  double ki;  ///< integral gain
-  double kd;  ///< differential gain
-  double prevError;  ///< error at previous time step
-  double integralError;  ///< Accumulation of error over time
+  double dt = 0.01;  		///< time step
+  double kp;  				///< proportional gain
+  double ki;  				///< integral gain
+  double kd;  				///< differential gain
+  double prevError;  		///< error at previous time step
+  double integralError;  	///< Accumulation of error over time
+  double ctrlOp;			///< Control Output from the PID controller
  public:
   /**
    * @brief Default PID Controller
@@ -52,9 +53,29 @@ class PID {
    */
   void setParameters(const double &kp, const double& ki, const double& kd);
   /**
-   * @brief get value of ki
-   * @return Ki value of PID
+   * @brief set value of kp
+   * @param Kp - proportional gain
    */
+  void setKp(const double &kp);
+  /**
+   * @brief set value of kd
+   * @param Kd - differential gain
+   */
+  void setKd(const double &kd);
+  /**
+   * @brief set value of ki
+   * @param ki - integral gain
+   */
+  void setKi(const double &ki);
+  /**
+   * @brief set the dt value
+   * @param dt - duration of each time step
+   */
+  void setDt(const double &dt);
+  /**
+     * @brief get value of ki
+     * @return Ki value of PID
+     */
   double getKi();
   /**
    * @brief get value of kp
@@ -66,5 +87,16 @@ class PID {
    * @return kd value of PID
    */
   double getKd();
+  /**
+   * @brief get the value current value of Control Output from PID controller
+   * @return ctrlOp value of PID
+   */
+  double getCtrlOp();
+  /**
+   * @brief get the value of dt
+   * @return dt value of PID
+   */
+  double getDt();
+
 };
 #endif  // WEEK4_TDD_4B_INCLUDE_CONTROLLER_H_

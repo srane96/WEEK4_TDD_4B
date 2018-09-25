@@ -1,6 +1,6 @@
 # C++ Boilerplate
-[![Build Status](https://travis-ci.org/srane96/Week4_TDD_4B.svg?branch=master)](https://travis-ci.org/srane96/Week4_TDD_4B)
-[![Coverage Status](https://coveralls.io/repos/github/srane96/Week4_TDD_4B/badge.svg?branch=master)](https://coveralls.io/github/srane96/Week4_TDD_4B?branch=master)
+[![Build Status](https://travis-ci.org/vijay4313/Week4_TDD_4B.svg?branch=master)](https://travis-ci.org/vijay4313/Week4_TDD_4B)
+[![Coverage Status](https://coveralls.io/repos/github/vijay4313/Week4_TDD_4B/badge.svg?branch=master)](https://coveralls.io/github/vijay4313/Week4_TDD_4B?branch=master)
 ---
 
 ## Authors
@@ -13,9 +13,35 @@ Navigator: Srinidhi Sreenath (SrinidhiSreenath)
 
 ```
 
+```
+Part 2:
+Driver: Venkatraman Narayanan (vijay4313)
+Navigator: Mayank Pathak (mayankpathak10)
+@version 2.0
+@Copyright 2018 Venkatraman Narayanan
+
+```
+## Overview
+A simple illustration of pair programming concepts and implementation of PID controller usinf:
+* cmake
+* googletest
+* Travis CI
+* Coveralls
+
+## Design review discussions and changes
+The following suggestions/changes were made based on a design review meeting:
+
+1. The initial setup considered the time step parameter to be ```const double```, thus sealing the ability to change its value. It was changed to ```double``` for versatile execution of the controller.
+
+2. The original design did not accomodate member-functions that alter/retrieve class parameters/state variables such as, Kp, Kd, Ki and Outputs. New member-functions were added to set and retrieve class parameters
+
+3. The initial test cases were wrong. The incorrect test cases were changed and new test cases were added to increase coverage to 100%
+
+4. Few deviations in commenting styles were corrected to follow Google Style Guide convention
+
 ## Standard install via command-line
 ```
-git clone --recursive https://github.com/srane96/Week4_TDD_4B
+git clone --recursive https://github.com/vijay4313/Week4_TDD_4B
 cd <path to repository>
 mkdir build
 cd build
@@ -33,7 +59,7 @@ In your Eclipse workspace directory (or create a new one), checkout the repo (an
 ```
 mkdir -p ~/workspace
 cd ~/workspace
-git clone --recursive https://github.com/srane96/Week4_TDD_4B
+git clone --recursive https://github.com/vijay4313/Week4_TDD_4B
 ```
 
 In your work directory, use cmake to create an Eclipse project for an [out-of-source build] of cpp-boilerplate
@@ -114,3 +140,4 @@ perspetive view (or Windows->Perspective->Open Perspective->C/C++).
     Project Explorer and choose Source -> Format
 
 [reference-id-for-eclipse-cpp-google-style]: https://raw.githubusercontent.com/google/styleguide/gh-pages/eclipse-cpp-google-style.xml
+
