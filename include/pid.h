@@ -16,7 +16,7 @@
 #include <iostream>
 class PID {
  private:
-  double dt = 0.01;  		///< time step
+  double dt = 0.1;  		///< time step
   double kp;  				///< proportional gain
   double ki;  				///< integral gain
   double kd;  				///< differential gain

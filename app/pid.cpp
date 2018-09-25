@@ -64,22 +64,22 @@ void PID::setParameters(const double &kp, const double& ki, const double& kd) {
 /**
  * Set the kp variable to new value
  */
-void PID::setKp(const double &Kp) {
-	this->kp = Kp;
+void PID::setKp(const double &kp) {
+	this->kp = kp;
 }
 
 /**
  * Set the kd variable to new value
  */
-void PID::setKd(const double &Kd) {
-	this->kd = Kd;
+void PID::setKd(const double &kd) {
+	this->kd = kd;
 }
 
 /**
  * Set the kd variable to new value
  */
-void PID::setKi(const double &Ki) {
-	this->ki = Ki;
+void PID::setKi(const double &ki) {
+	this->ki = ki;
 }
 
 /**

@@ -36,8 +36,8 @@ TEST(PIDTest, setIndividualParams) {
   dummyPID.setDt(0.01);
 
   EXPECT_EQ(15.0, dummyPID.getKp());
-  EXPECT_EQ(50.5, dummyPID.getKi());
-  EXPECT_EQ(2.0, dummyPID.getKd());
+  EXPECT_EQ(50.5, dummyPID.getKd());
+  EXPECT_EQ(2.0, dummyPID.getKi());
   EXPECT_EQ(0.01, dummyPID.getDt());
 }
 

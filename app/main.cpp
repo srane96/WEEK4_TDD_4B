@@ -15,7 +15,7 @@ using std::cout;	using std::cin;
 
 int main() {
 	double currVel, desVel;
-	PID dummyPID(5.0, 5.0, 5.0);
+	PID dummyPID(0.1, 0.5, 0.01);
 	cout << "Enter Current and desired velocity: ";
 	cin >> currVel >> desVel;
 	cout << "The necessary control input: "<< dummyPID.compute(desVel, currVel) << std::endl;
