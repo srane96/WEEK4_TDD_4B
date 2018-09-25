@@ -11,7 +11,13 @@
 #include <iostream>
 #include "pid.h"
 
+using std::cout;	using std::cin;
+
 int main() {
-  PID dummyPID(5.0, 5.0, 5.0);
-  return 0;
+	double currVel, desVel;
+	PID dummyPID(5.0, 5.0, 5.0);
+	cout >> "Enter Current and desired velocity: ";
+	cin >> currVel >> desVel;
+	cout << "The necessary control input: "<< dummyPID.compute(desVel, currVel) << std::endl;
+	return 0;
 }

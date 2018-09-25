@@ -19,11 +19,22 @@
  * if default constructor is called.
  */
 PID::PID() {
+	this->kp = 0;  ///< proportional gain
+	this->ki = 0;  ///< integral gain
+	this->kd = 0;  ///< differential gain
+	this->prevError = 0;  ///< error at previous time step
+	this->integralError = 0;  ///< Accumulation of error over time
 }
 /**
  * Initialize controller gains
  */
 PID::PID(const double &kp, const double& ki, const double& kd) {
+	this->kp = kp;  ///< proportional gain
+	this->ki = ki;  ///< integral gain
+	this->kd = kd;  ///< differential gain
+	this->prevError = 0;  ///< error at previous time step
+	this->integralError = 0;  ///< Accumulation of error over time
+
 }
 /// Default destructor
 PID::~PID() {
@@ -33,23 +44,30 @@ PID::~PID() {
  * and Kd member variables
  */
 double PID::compute(const double& setPoint, const double& currentVel) {
-  return 0;
+	double error = setPoint - currentVel;
+	this->integralError += error;
+	double ctrlInp = kp * error + ki * integralError + (kd/dt) * (error - prevError);
+	this->prevError = error;
+	return ctrlInp;
 }
 /**
  * Set new values to member variables of the class
  */
 void PID::setParameters(const double &kp, const double& ki, const double& kd) {
+	this->kp = kp;
+	this->ki = ki;
+	this->kd = kd;
 }
 /// Return value of Ki member variable
 double PID::getKi() {
-  return 0;
+  return this->ki;
 }
 /// Return value of Kp member variable
 double PID::getKp() {
-  return 0;
+  return this->kp;
 }
 /// Return value of Kd member variable
 double PID::getKd() {
-  return 0;
+  return this->kd;
 }
 

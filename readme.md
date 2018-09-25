@@ -1,6 +1,6 @@
 # C++ Boilerplate
-[![Build Status](https://travis-ci.org/srane96/Week4_TDD_4B.svg?branch=master)](https://travis-ci.org/srane96/Week4_TDD_4B)
-[![Coverage Status](https://coveralls.io/repos/github/srane96/Week4_TDD_4B/badge.svg?branch=master)](https://coveralls.io/github/srane96/Week4_TDD_4B?branch=master)
+[![Build Status](https://travis-ci.org/vijay4313/Week4_TDD_4B.svg?branch=master)](https://travis-ci.org/vijay4313/Week4_TDD_4B)
+[![Coverage Status](https://coveralls.io/repos/github/vijay4313/Week4_TDD_4B/badge.svg?branch=master)](https://coveralls.io/github/vijay4313/Week4_TDD_4B?branch=master)
 ---
 
 ## Authors
@@ -10,6 +10,15 @@ Driver: Siddhesh Rane (srane96)
 Navigator: Srinidhi Sreenath (SrinidhiSreenath)
 @version 1.0
 @Copyright 2018 Siddhesh Rane
+
+```
+
+```
+Part 2:
+Driver: Venkatraman Narayanan (vijay4313)
+Navigator: Mayank Pathak (mayankpathak10)
+@version 2.0
+@Copyright 2018 Venkatraman Narayanan
 
 ```
 
@@ -114,3 +123,4 @@ perspetive view (or Windows->Perspective->Open Perspective->C/C++).
     Project Explorer and choose Source -> Format
 
 [reference-id-for-eclipse-cpp-google-style]: https://raw.githubusercontent.com/google/styleguide/gh-pages/eclipse-cpp-google-style.xml
+
