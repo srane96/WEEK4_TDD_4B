@@ -1,1 +1,0 @@
-/usr/bin/c++ -std=c++14  -g -O0 -fprofile-arcs -ftest-coverage -g  -fprofile-arcs -ftest-coverage CMakeFiles/pid-controller.dir/main.cpp.o CMakeFiles/pid-controller.dir/pid.cpp.o  -o pid-controller -rdynamic 
