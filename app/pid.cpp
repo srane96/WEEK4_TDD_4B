@@ -1,19 +1,39 @@
 /**
- *  Copyright 2018 Siddhesh Rane
- *  @file    pid.cpp
- *  @author  Siddhesh Rane (srane96)
- *  @date    9/22/2018
+ * 3-clause BSD License
  *
- *  @brief PID controller class implementation
+ * Copyright (c) 2018 Siddhesh Rane
  *
- *  @section DESCRIPTION
+ * Redistribution and use in source and binary forms, with or without modification, are permitted provided that
+ * the following conditions are met:
  *
- *  This source file implements a PID controller class.
- *  The class contains methods to compute target velocity
- *  given setpoint, current velocity and gain parameters.
+ * 1. Redistributions of source code must retain the above copyright notice, this list of conditions and the
+ * following disclaimer.
  *
+ * 2. Redistributions in binary form must reproduce the above copyright notice, this list of conditions and
+ * the following disclaimer in the documentation and/or other materials provided with the distribution.
+ *
+ * 3. Neither the name of the copyright holder nor the names of its contributors may be used to endorse or
+ * promote products derived from this software without specific prior written permission.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED
+ * WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A
+ * PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR
+ * ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED
+ * TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
+ * HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+ * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF
+ * THE POSSIBILITY OF SUCH DAMAGE.
+ *
+ * @file pid.cpp
+ * @version 1.0
+ * @author Siddhesh Rane
+ * @brief main class for emergency rescue robot
+ *
+ * @section DESCRIPTION
+ *
+ * C++ sourse file that implements PID class.
  */
-#include "pid.h"
+#include "../include/pid.h"
 /**
  * Initialize all values to 0.0
  * if default constructor is called.
@@ -89,23 +109,69 @@ void PID::setDt(const double &dt) {
 	this->dt = dt;
 }
 
-/// Return value of Ki member variable
+/**
+ * Return value of Ki member variable
+ */
 double PID::getKi() {
   return this->ki;
 }
-/// Return value of Kp member variable
+/**
+ *  Return value of Kp member variable
+ */
 double PID::getKp() {
   return this->kp;
 }
-/// Return value of Kd member variable
+/**
+ * Return value of Kd member variable
+ */
 double PID::getKd() {
   return this->kd;
 }
-/// Return the current control output of the PID controller
+/**
+ * Return the current control output of the PID controller
+ */
 double PID::getCtrlOp(){
 	return this->ctrlOp;
 }
-///	Return the value of dt member variable
+/**
+ * Return the value of dt member variable
+ */
 double PID::getDt() {
 	return this->dt;
+}
+/**
+ * Implement kp tuner
+ */
+double PID::adjustTunedKp(const double& max) {
+  double rKp = tuner->getRandomKp(max);
+  if (rKp > 100 || rKp < 0)
+    kp = 50;
+  else
+    kp = rKp;
+
+  return kp;
+}
+/**
+ * Implement kd tuner
+ */
+double PID::adjustTunedKd(const double& max) {
+  double rKd = tuner->getRandomKd(max);
+  if (rKd > 100 || rKd < 0)
+    kd = 50;
+  else
+    kd = rKd;
+
+  return kd;
+}
+/**
+ * Implement kd tuner
+ */
+double PID::adjustTunedKi(const double& max) {
+  double rKi = tuner->getRandomKi(max);
+  if (rKi > 100 || rKi < 0)
+    ki = 50;
+  else
+    ki = rKi;
+
+  return ki;
 }

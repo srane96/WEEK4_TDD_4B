@@ -1,19 +1,42 @@
 /**
- *  Copyright 2018 Siddhesh Rane
- *  @file    pid.hpp
- *  @author  Siddhesh Rane (srane96)
- *  @date    9/22/2018
+ * 3-clause BSD License
  *
- *  @brief PID controller for mobile robot
+ * Copyright (c) 2018 Siddhesh Rane
  *
- *  @section DESCRIPTION
+ * Redistribution and use in source and binary forms, with or without modification, are permitted provided that
+ * the following conditions are met:
  *
- *  Source header file for PID controller class.
+ * 1. Redistributions of source code must retain the above copyright notice, this list of conditions and the
+ * following disclaimer.
  *
+ * 2. Redistributions in binary form must reproduce the above copyright notice, this list of conditions and
+ * the following disclaimer in the documentation and/or other materials provided with the distribution.
+ *
+ * 3. Neither the name of the copyright holder nor the names of its contributors may be used to endorse or
+ * promote products derived from this software without specific prior written permission.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED
+ * WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A
+ * PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR
+ * ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED
+ * TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
+ * HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+ * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF
+ * THE POSSIBILITY OF SUCH DAMAGE.
+ *
+ * @file pid.cpp
+ * @version 1.0
+ * @author Siddhesh Rane
+ * @brief main class for emergency rescue robot
+ *
+ * @section DESCRIPTION
+ *
+ * Source header file for PID controller class.
  */
 #ifndef WEEK4_TDD_4B_INCLUDE_CONTROLLER_H_
 #define WEEK4_TDD_4B_INCLUDE_CONTROLLER_H_
 #include <iostream>
+#include "tuner.h"
 class PID {
  private:
   double dt = 0.01;  		///< time step
@@ -23,11 +46,19 @@ class PID {
   double prevError;  		///< error at previous time step
   double integralError;  	///< Accumulation of error over time
   double ctrlOp;			///< Control Output from the PID controller
+  Tuner* tuner;
  public:
   /**
    * @brief Default PID Controller
    */
   PID();
+  /**
+   * @brief Constructor with initial values
+   * @param ttuner - reference to Tuner class8
+   */
+  PID(Tuner* ttuner)
+      : tuner(ttuner) {
+  }
   /**
    * @brief Constructor with initial values
    * @param kp - proportional gain
@@ -37,6 +68,18 @@ class PID {
   PID(const double &kp, const double& ki, const double& kd);
   /// PID destructor
   ~PID();
+  /**
+   * @return void
+   */
+  double adjustTunedKp(const double& max);
+  /**
+   * @return void
+   */
+  double adjustTunedKd(const double& max);
+  /**
+   * @return void
+   */
+  double adjustTunedKi(const double& max);
   /**
    * @brief calculate new velocity using setpoint
    *        and current velocity
