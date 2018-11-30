@@ -1,5 +1,5 @@
 # C++ Implementation of GoogleMock
-[![Build Status](https://travis-ci.org/vijay4313/Week4_TDD_4B.svg?branch=master)](https://travis-ci.org/vijay4313/Week4_TDD_4B
+[![Build Status](https://travis-ci.org/vijay4313/Week4_TDD_4B.svg?branch=master)](https://travis-ci.org/vijay4313/Week4_TDD_4B)
 [![Coverage Status](https://coveralls.io/repos/github/vijay4313/Week4_TDD_4B/badge.svg?branch=master)](https://coveralls.io/github/vijay4313/Week4_TDD_4B?branch=master)
 
 ## Overview
