@@ -39,24 +39,25 @@
  * if default constructor is called.
  */
 PID::PID() {
-	this->kp = 0;  				///< proportional gain
-	this->ki = 0;  				///< integral gain
-	this->kd = 0;  				///< differential gain
-	this->prevError = 0;  		///< error at previous time step
-	this->integralError = 0;  	///< Accumulation of error over time
-	this->ctrlOp = 0;			///< Control Output from the PID controller
+  kp = 0;  ///< proportional gain
+  ki = 0;  ///< integral gain
+  kd = 0;  ///< differential gain
+  prevError = 0;  ///< error at previous time step
+  integralError = 0;  ///< Accumulation of error over time
+  ctrlOp = 0;  ///< Control Output from the PID controller
+  tuner = nullptr;
 }
 /**
  * Initialize controller gains
  */
-PID::PID(const double &kp, const double& ki, const double& kd) {
-	this->kp = kp;  			///< proportional gain
-	this->ki = ki;  			///< integral gain
-	this->kd = kd;  			///< differential gain
-	this->prevError = 0;  		///< error at previous time step
-	this->integralError = 0;  	///< Accumulation of error over time
-	this->ctrlOp = 0;			///< Control Output from the PID controller
-
+PID::PID(const double &Kp, const double& Ki, const double& Kd) {
+  kp = Kp;  ///< proportional gain
+  ki = Ki;  ///< integral gain
+  kd = Kd;  ///< differential gain
+  prevError = 0;  ///< error at previous time step
+  integralError = 0;  ///< Accumulation of error over time
+  ctrlOp = 0;  ///< Control Output from the PID controller
+  tuner = nullptr;
 }
 /// Default destructor
 PID::~PID() {
@@ -66,47 +67,48 @@ PID::~PID() {
  * and Kd member variables
  */
 double PID::compute(const double& setPoint, const double& currentVel) {
-	double error = setPoint - currentVel;
-	this->integralError += error;
-	this->ctrlOp = kp * error + ki * integralError + (kd/dt) * (error - prevError);
-	this->prevError = error;
-	return ctrlOp;
+  double error = setPoint - currentVel;
+  this->integralError += error;
+  this->ctrlOp = kp * error + ki * integralError
+      + (kd / dt) * (error - prevError);
+  this->prevError = error;
+  return ctrlOp;
 }
 /**
  * Set new values to member variables of the class
  */
 void PID::setParameters(const double &kp, const double& ki, const double& kd) {
-	this->kp = kp;
-	this->ki = ki;
-	this->kd = kd;
+  this->kp = kp;
+  this->ki = ki;
+  this->kd = kd;
 }
 
 /**
  * Set the kp variable to new value
  */
 void PID::setKp(const double &kp) {
-	this->kp = kp;
+  this->kp = kp;
 }
 
 /**
  * Set the kd variable to new value
  */
 void PID::setKd(const double &kd) {
-	this->kd = kd;
+  this->kd = kd;
 }
 
 /**
  * Set the kd variable to new value
  */
 void PID::setKi(const double &ki) {
-	this->ki = ki;
+  this->ki = ki;
 }
 
 /**
  * Set the dt variable to new value
  */
 void PID::setDt(const double &dt) {
-	this->dt = dt;
+  this->dt = dt;
 }
 
 /**
@@ -130,14 +132,14 @@ double PID::getKd() {
 /**
  * Return the current control output of the PID controller
  */
-double PID::getCtrlOp(){
-	return this->ctrlOp;
+double PID::getCtrlOp() {
+  return this->ctrlOp;
 }
 /**
  * Return the value of dt member variable
  */
 double PID::getDt() {
-	return this->dt;
+  return this->dt;
 }
 /**
  * Implement kp tuner

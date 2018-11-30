@@ -56,8 +56,14 @@ class PID {
    * @brief Constructor with initial values
    * @param ttuner - reference to Tuner class8
    */
-  PID(Tuner* ttuner)
-      : tuner(ttuner) {
+  explicit PID(Tuner* ttuner)
+      : tuner(ttuner),
+        kp(0),
+        ki(0),
+        kd(0),
+        prevError(0),
+        integralError(0),
+        ctrlOp(0) {
   }
   /**
    * @brief Constructor with initial values
@@ -65,7 +71,7 @@ class PID {
    * @param ki - integral gain
    * @param kd - differential gain
    */
-  PID(const double &kp, const double& ki, const double& kd);
+  PID(const double &Kp, const double& Ki, const double& Kd);
   /// PID destructor
   ~PID();
   /**

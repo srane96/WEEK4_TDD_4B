@@ -36,7 +36,7 @@
 #include <stdlib.h>
 #include <time.h>
 #include <iostream>
-#include "tuner.h"
+#include "../include/tuner.h"
 Tuner::Tuner() {
   std::cout << "Tuner object created" << std::endl;
 }
@@ -44,16 +44,16 @@ Tuner::~Tuner() {
 }
 double Tuner::getRandomKp(const double& max) {
   srand(time(NULL));
-  double kp = rand() % int(max) + 1;
+  double kp = rand() % static_cast<int>(max) + 1;
   return kp;
 }
 double Tuner::getRandomKi(const double& max) {
   srand(time(NULL));
-  double ki = rand() % int(max) + 1;
+  double ki = rand() % static_cast<int>(max) + 1;
   return ki;
 }
 double Tuner::getRandomKd(const double& max) {
   srand(time(NULL));
-  double kd = rand() % int(max) + 1;
+  double kd = rand() % static_cast<int>(max) + 1;
   return kd;
 }

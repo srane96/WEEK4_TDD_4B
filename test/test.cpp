@@ -35,8 +35,8 @@
  */
 #include <gtest/gtest.h>
 #include <gmock/gmock.h>
-#include "pid.h"
-#include "tuner.h"
+#include "../include/pid.h"
+#include "../include/tuner.h"
 using ::testing::Return;
 using ::testing::_;
 using ::testing::AtLeast;
@@ -47,9 +47,9 @@ using ::testing::AtLeast;
  */
 class MockTuner : public Tuner {
  public:
-  MOCK_METHOD1(getRandomKp,double(const double& max));
-  MOCK_METHOD1(getRandomKd,double(const double& max));
-  MOCK_METHOD1(getRandomKi,double(const double& max));
+  MOCK_METHOD1(getRandomKp, double(const double& max));
+  MOCK_METHOD1(getRandomKd, double(const double& max));
+  MOCK_METHOD1(getRandomKi, double(const double& max));
 };
 /**
  * @brief Test class initialization
@@ -66,12 +66,9 @@ TEST(PIDTest, classInitialization) {
  * @brief Test compute method
  */
 TEST(PIDTest, computeControlInput) {
-
   PID dummyPID(20.2, 30.3, 1.1);
-
   double setPoint = 5.0;
   double currentVelocity = 2.5;
-
   EXPECT_NEAR(401.25, dummyPID.compute(setPoint, currentVelocity), 10.0);
 }
 
@@ -84,23 +81,20 @@ TEST(PIDTest, setIndividualParams) {
   dummyPID.setKd(50.5);
   dummyPID.setKi(2.0);
   dummyPID.setDt(0.01);
-
   EXPECT_EQ(15.0, dummyPID.getKp());
   EXPECT_EQ(50.5, dummyPID.getKd());
   EXPECT_EQ(2.0, dummyPID.getKi());
   EXPECT_EQ(0.01, dummyPID.getDt());
 }
-
 /**
  * @brief Test retrieve control output from PID method
  */
 TEST(PIDTest, getControlOutput) {
-	PID dummyPID(20.2, 30.3, 1.1);
-	double setPoint = 5.0;
-	double currentVelocity = 2.5;
-	dummyPID.compute(setPoint, currentVelocity);
-
-	EXPECT_NEAR(401.25, dummyPID.getCtrlOp(), 10.0);
+  PID dummyPID(20.2, 30.3, 1.1);
+  double setPoint = 5.0;
+  double currentVelocity = 2.5;
+  dummyPID.compute(setPoint, currentVelocity);
+  EXPECT_NEAR(401.25, dummyPID.getCtrlOp(), 10.0);
 }
 /**
  * @brief Check if mock object methods are being called
